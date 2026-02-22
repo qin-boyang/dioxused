@@ -1,0 +1,22 @@
+[application]
+
+[web.app]
+
+# HTML title tag content
+title = "dioxus_demo_deploy"
+base_path = "dioxus_demo_deploy" # relative path for github pages deploy
+
+# include `assets` in web platform
+[web.resource]
+
+# Additional CSS style files
+style = []
+
+# Additional JavaScript files
+script = []
+
+[web.resource.dev]
+
+# Javascript code file
+# serve: [dev-server] only
+script = []
