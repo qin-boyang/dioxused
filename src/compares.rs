@@ -176,6 +176,29 @@ fn build_article_content() -> ArticleContent {
                       s.footer = "Best For: Enterprise projects requiring a mature, battle-tested ecosystem.".to_string();
                       s.footer_text_color = "text-green-800".to_string();
                   });
+        a.section("bg-purple-50",
+                  "border-purple-100",
+                  "4. Dioxus vs. Tauri 2.0: Synergy, Not Competition",
+                  "text-purple-900",
+
+                  |s| {
+                      s.p = "While Dioxus is a UI framework, Tauri is an app 'shell' or bundler. They are often used together rather than being alternatives to one another.".to_string();
+
+                      s.item("Dioxus (The UI):",
+                             "Handles the actual 'view' logic, components, and state management using Rust."
+                      );
+
+                      s.item("Tauri (The Shell):",
+                             "Provides the native window, system tray, and access to OS APIs like Filesystem and Notifications."
+                      );
+
+                      s.item("The Difference:",
+                             "Dioxus has its own desktop renderer (Wry), but Tauri 2.0 offers deeper mobile plugin support (biometrics, geofencing)."
+                      );
+
+                      s.footer = "Best For: Use Dioxus standalone for speed; use Dioxus + Tauri for deep OS integration.".to_string();
+                      s.footer_text_color = "text-purple-800".to_string();
+                  });
     });
     my_article
 }
