@@ -152,7 +152,63 @@ fn build_article_content() -> ArticleContent {
                 s.footer = "IMPORTANCE: scarlar/compound type implemented 'Copy trait'. They can be borrowed without '&', because internally they are copied in stack memory".to_string();
                 s.footer_text_color = "text-green-800".to_string();
             });
+        a.section(
+            |s| {
+                s.bg_color = "bg-orange-50".to_string();
+                s.border_color = "border-orange-100".to_string();
+                s.h2 = "3. let if".to_string();
+                s.h2_color = "text-orange-900".to_string();
+                s.p = "let number = if condition { 5 } else { 6 };".to_string();
+                s.item("Java:",
+                       "int number = condition ? 5 : 6 "
+                );
+                s.item("Rust Readability:",
+                       "👍"
+                );
+                s.footer = "IMPORTANCE: ✅".to_string();
+                s.footer_text_color = "text-orange-800".to_string();
+            });
+        a.section(
+            |s| {
+                s.bg_color = "bg-purple-50".to_string();
+                s.border_color = "border-purple-100".to_string();
+                s.h2 = "4. Return multiple values (tuple) in a function".to_string();
+                s.h2_color = "text-purple-900".to_string();
+                s.p = "fn get_stats(numbers: &[i32]) -> (i32, i32, f64) {".to_string();
+                s.item("Java/Kotlin:",
+                       "Java or Kotlin function does not support returning multiple values"
+                );
+                s.item("Rust:",
+                       "Rust function supports returning multiple values, but actually it is a compound type 'Tuple'"
+                );
+                s.footer = "IMPORTANCE: ✅".to_string();
+                s.footer_text_color = "text-purple-800".to_string();
+            });
+        a.section(
+            |s| {
+                s.bg_color = "bg-yellow-50".to_string();
+                s.border_color = "border-yellow-100".to_string();
+                s.h2 = "5. Scalar Type Borrowing".to_string();
+                s.h2_color = "text-yellow-900".to_string();
+                s.p = "let x = 5;let y = x;println!('x = {} and y = {}', x, y);".to_string();
+                s.item("Memory Storage:",
+                       "Scalar type or you might say Java's primitive stores in Stack memory, not Heap"
+                );
+                s.item("Copy trait:",
+                       "Types in Stack can be borrowed directly without '&'. They are actually copied in Stack. They implemented Copy trait"
+                );
+                s.item("What about Strings:",
+                       "If x,y are Strings, the above will not compile. Because Strings are in Heap. Heap memory is different from a reference in Stack"
+                );
+                s.footer = "IMPORTANCE: Scalar types in Stack memory but Objects in Heap memory".to_string();
+                s.footer_text_color = "text-yellow-800".to_string();
+            });
     });
     my_article
 }
 
+#[cfg(test)]
+fn test() {
+    let x = 5;let y = x;println!("x = {} and y = {}", x, y);
+    // let s1 = "hello".to_string();let s2 = s1;println!("s1 = {} and s2 = {}", s1, s2);
+ }
