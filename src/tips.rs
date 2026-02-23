@@ -165,7 +165,7 @@ fn build_article_content() -> ArticleContent {
                 s.item("Rust Readability:",
                        "👍"
                 );
-                s.footer = "IMPORTANCE: ✅".to_string();
+                s.footer = "IMPORTANCE: let..if, let..loop, let..pattern-matching. All of these has a return".to_string();
                 s.footer_text_color = "text-orange-800".to_string();
             });
         a.section(
