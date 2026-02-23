@@ -8,7 +8,6 @@ edition = "2021"
 
 [dependencies]
 dioxus = { version = "0.7.3", features = ["router"] }
-dioxus-markdown = "0.0.1"
 
 [features]
 default = ["web"]
