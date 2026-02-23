@@ -1255,7 +1255,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "dioxus_demo_deploy"
+name = "dioxused"
 version = "0.1.0"
 dependencies = [
  "dioxus",

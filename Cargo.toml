@@ -1,5 +1,5 @@
 [package]
-name = "dioxus_demo_deploy"
+name = "dioxused"
 version = "0.1.0"
 authors = ["boyangqin <qboyang@gmail.com>"]
 edition = "2021"

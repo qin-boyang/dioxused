@@ -52,4 +52,4 @@ To create bundle for release, use the `--release` flag.
 ```bash
 dx bundle --platform web --release
 ```
-Bundle for web can be found in `target/dx/dioxus_demo_deploy/releae/web/public/`
+Bundle for web can be found in `target/dx/dioxused/releae/web/public/`

@@ -3,8 +3,8 @@
 [web.app]
 
 # HTML title tag content
-title = "dioxus_demo_deploy"
-base_path = "dioxus_demo_deploy" # relative path for github pages deploy
+title = "dioxused"
+base_path = "dioxused" # relative path for github pages deploy
 
 # include `assets` in web platform
 [web.resource]
