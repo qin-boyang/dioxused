@@ -2,6 +2,8 @@ use dioxus::prelude::*;
 
 mod compares;
 use compares::Compares;
+mod codeblock;
+use codeblock::CodeBlock;
 
 // Keep your assets
 const FAVICON: Asset = asset!("/assets/favicon.ico");
@@ -16,6 +18,8 @@ enum Route {
     Home {},
     #[route("/compares")]
     Compares {},
+    #[route("/codeblock")]
+    CodeBlock {},
 }
 
 fn main() {
@@ -42,6 +46,7 @@ pub fn Home() -> Element {
             div { id: "links",
                 // Use the Link component for internal navigation
                 Link { to: Route::Compares {}, "👋 Compare with Other Frameworks" }
+                Link { to: Route::CodeBlock {}, "📝 Code Kotlin Style DSL" }
             }
         }
     }
