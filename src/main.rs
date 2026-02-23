@@ -3,6 +3,9 @@ use dioxus::prelude::*;
 mod compares;
 use compares::Compares;
 mod codeblock;
+mod tips;
+use tips::Tips;
+
 use codeblock::CodeBlock;
 
 // Keep your assets
@@ -20,6 +23,8 @@ enum Route {
     Compares {},
     #[route("/codeblock")]
     CodeBlock {},
+    #[route("/tips")]
+    Tips {},
 }
 
 fn main() {
@@ -47,6 +52,7 @@ pub fn Home() -> Element {
                 // Use the Link component for internal navigation
                 Link { to: Route::Compares {}, "👋 Compare with Other Frameworks" }
                 Link { to: Route::CodeBlock {}, "📝 Code Kotlin Style DSL" }
+                Link { to: Route::Tips {}, "💡 Tips for Java Developer"}
             }
         }
     }
