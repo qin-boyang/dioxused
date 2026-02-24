@@ -203,6 +203,19 @@ fn build_article_content() -> ArticleContent {
                 s.footer = "IMPORTANCE: Scalar types in Stack memory but Objects in Heap memory".to_string();
                 s.footer_text_color = "text-yellow-800".to_string();
             });
+        a.section(
+            |s| {
+                s.bg_color = "bg-gray-50".to_string();
+                s.border_color = "border-gray-100".to_string();
+                s.h2 = "6. Struct Update Syntax".to_string();
+                s.h2_color = "text-gray-900".to_string();
+                s.p = "let user2 = User{.. Default::default()} or let user2 = User{age: 18, ..user1} ".to_string();
+                s.item("Java:",
+                       "No such syntax"
+                );
+                s.footer = "IMPORTANCE: ✅".to_string();
+                s.footer_text_color = "text-gray-800".to_string();
+            });
     });
     my_article
 }
