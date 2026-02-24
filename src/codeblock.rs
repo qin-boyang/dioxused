@@ -1,4 +1,6 @@
 use dioxus::prelude::*;
+use crate::footer::Footer;
+use crate::header::Header;
 use crate::Route;
 
 #[component]
@@ -70,12 +72,7 @@ pub fn CodeBlock() -> Element {
 
     rsx! {
         div { class: "p-8 max-w-4xl mx-auto font-sans text-gray-900",
-            // Navigation Link
-            Link {
-                to: Route::Home {},
-                class: "text-blue-600 hover:text-blue-800 font-medium mb-8 block transition-colors",
-                "← Back Home"
-            }
+            Header {}
 
             div { class: "border-b pb-6",
                 p { class: "text-lg text-gray-300 italic",
@@ -118,6 +115,8 @@ pub fn CodeBlock() -> Element {
                     {test_code_content}
                 }
             }
+            br {}
+            Footer {}
         }
     }
 }

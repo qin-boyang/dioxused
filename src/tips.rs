@@ -1,4 +1,6 @@
 use dioxus::prelude::*;
+use crate::footer::Footer;
+use crate::header::Header;
 use crate::Route;
 
 #[component]
@@ -7,12 +9,7 @@ pub fn Tips() -> Element {
     rsx! {
         div { class: "p-8 max-w-4xl mx-auto font-sans text-gray-900",
 
-            // Navigation Link
-            Link {
-                to: Route::Home {},
-                class: "text-blue-600 hover:text-blue-800 font-medium mb-8 block transition-colors",
-                "← Back Home"
-            }
+            Header {}
 
             // Main Article Container
             article { class: "space-y-8",
@@ -53,10 +50,7 @@ pub fn Tips() -> Element {
                     }
                 }
 
-                // Footer Note
-                div { class: "pt-10 text-center text-gray-400 text-sm border-t",
-                    "Built with Dioxus 0.7.3 — The future of Rust UI."
-                }
+                Footer {}
             }
         }
     }

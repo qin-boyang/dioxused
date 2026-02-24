@@ -3,10 +3,13 @@ use dioxus::prelude::*;
 mod compares;
 use compares::Compares;
 mod codeblock;
+use codeblock::CodeBlock;
 mod tips;
 use tips::Tips;
 
-use codeblock::CodeBlock;
+mod header;
+mod footer;
+
 
 // Keep your assets
 const FAVICON: Asset = asset!("/assets/favicon.ico");
