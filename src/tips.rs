@@ -235,6 +235,8 @@ fn build_article_content() -> ArticleContent {
 
 #[cfg(test)]
 fn test() {
-    let x = 5;let y = x;println!("x = {} and y = {}", x, y);
+    let x = 5;
+    let y = x; // not borrowing. x and y are copied in stack memory
+    println!("x = {} and y = {}", x, y);
     // let s1 = "hello".to_string();let s2 = s1;println!("s1 = {} and s2 = {}", s1, s2);
  }
