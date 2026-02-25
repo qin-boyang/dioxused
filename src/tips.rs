@@ -226,6 +226,16 @@ fn build_article_content() -> ArticleContent {
                 s.item("Function:",
                        "fn mixup<V, W>(self, other: Point<V, W>) -> Point<T, W>"
                 );
+                s.item("Implement Trait for Strut:",
+                "impl<T, V> DataProcessor for Container<T, V>
+                where
+                T: std::fmt::Display,
+                V: std::fmt::Debug, {"
+                );
+                s.item("impl Trait (Static Dispatch):",
+                        "fn speak_static(animal: &impl Animal) {");
+                s.item("dyn Trait (Dynamic Dispatch):",
+                       "fn speak_dynamic(animal: &dyn Animal) {");
                 s.footer = "IMPORTANCE: ✅".to_string();
                 s.footer_text_color = "text-blue-800".to_string();
             });
@@ -239,4 +249,6 @@ fn test() {
     let y = x; // not borrowing. x and y are copied in stack memory
     println!("x = {} and y = {}", x, y);
     // let s1 = "hello".to_string();let s2 = s1;println!("s1 = {} and s2 = {}", s1, s2);
+    let integer : Option<i32> = Some(5);
+    let float : Option<f64> = Some(5.0);
  }
