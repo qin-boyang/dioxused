@@ -210,6 +210,25 @@ fn build_article_content() -> ArticleContent {
                 s.footer = "IMPORTANCE: ✅".to_string();
                 s.footer_text_color = "text-gray-800".to_string();
             });
+        a.section(
+            |s| {
+                s.bg_color = "bg-blue-50".to_string();
+                s.border_color = "border-blue-100".to_string();
+                s.h2 = "6. Generic Syntax".to_string();
+                s.h2_color = "text-blue-900".to_string();
+                s.p = "Generics on struct, impl, fn ".to_string();
+                s.item("Struct:",
+                       "struct Point<T, U>"
+                );
+                s.item("Implement:",
+                       "impl<T, U> Point<T, U>"
+                );
+                s.item("Function:",
+                       "fn mixup<V, W>(self, other: Point<V, W>) -> Point<T, W>"
+                );
+                s.footer = "IMPORTANCE: ✅".to_string();
+                s.footer_text_color = "text-blue-800".to_string();
+            });
     });
     my_article
 }
