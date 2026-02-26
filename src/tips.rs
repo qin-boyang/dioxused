@@ -1,3 +1,5 @@
+use std::thread;
+use std::time::Duration;
 use dioxus::prelude::*;
 use crate::footer::Footer;
 use crate::header::Header;
@@ -241,11 +243,29 @@ fn build_article_content() -> ArticleContent {
                 s.footer = "IMPORTANCE: ✅".to_string();
                 s.footer_text_color = "text-blue-800".to_string();
             });
+        a.section(
+            |s| {
+                s.bg_color = "bg-green-50".to_string();
+                s.border_color = "border-green-100".to_string();
+                s.h2 = "7. Closure".to_string();
+                s.h2_color = "text-green-900".to_string();
+                s.p = "Rust Closure vs. Java Lambda".to_string();
+                s.item("Rust Closure definition:",
+                "let increment_closure = |num: u32| -> u32 { num+1 }");
+                s.item("Rust Closure invoke:",
+                       "let add_one = increment_closure(123);");
+                s.item("Java Lambda definition:",
+                "Function<Integer, Integer> incrementLambda = (num) -> {return num+1; };");
+                s.item("Java Lambda invoke:",
+                       "Integer addOne = incrementLambda.apply(123)");
+                s.footer = "IMPORTANCE: ✅".to_string();
+                s.footer_text_color = "text-green-800".to_string();
+            });
     });
     my_article
 }
 
-#[cfg(test)]
+#[test]
 fn test() {
     let x = 5;
     let y = x; // not borrowing. x and y are copied in stack memory
@@ -254,3 +274,54 @@ fn test() {
     let integer : Option<i32> = Some(5);
     let float : Option<f64> = Some(5.0);
  }
+#[test]
+fn test2() {
+    let x = 4;
+    let equal_to_x = move |z:i32| -> bool {
+        z == x
+    };
+    let y = 4;
+    assert_eq!(equal_to_x(y), true);
+    let yy = 5;
+    assert_eq!(equal_to_x(yy), false);
+}
+
+struct Cacher<T> where T: Fn(u32) -> u32 {
+    calculation: T,
+    value: Option<u32>,
+}
+impl<T> Cacher<T> where T: Fn(u32) -> u32 {
+    fn new(calculation: T) -> Cacher<T> {
+        Cacher {
+            calculation: calculation,
+            value: None,
+        }
+    }
+    fn result(&mut self, arg: u32) -> u32 {
+        match self.value {
+            Some(v) => v,
+            None => {
+                let v = (self.calculation)(arg);
+                self.value = Some(v);
+                v
+            }
+        }
+    }
+    fn generate_workout(intensity: u32, random_number: u32) {
+        let mut cacher: Cacher<fn(u32) -> u32> = Cacher::new(|num| {
+            println!("calculating slowly...");
+            thread::sleep(Duration::from_secs(2));
+            num
+        });
+        if intensity < 25 {
+            println!("Today, do {} pushups!", cacher.result(intensity));
+            println!("Next, do {} situps!", cacher.result(intensity));
+        } else {
+            if random_number == 3 {
+                println!("Take a break today! Remember to stay hydrated!");
+            } else {
+                println!("Today, run for {} minutes!", cacher.result(intensity));
+            }
+        }
+    }
+}
