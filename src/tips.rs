@@ -236,6 +236,8 @@ fn build_article_content() -> ArticleContent {
                         "fn speak_static(animal: &impl Animal) {");
                 s.item("dyn Trait (Dynamic Dispatch):",
                        "fn speak_dynamic(animal: &dyn Animal) {");
+                s.item("Trait bound:",
+                        "impl<T: Display + PartialOrd> Pair<T>");
                 s.footer = "IMPORTANCE: ✅".to_string();
                 s.footer_text_color = "text-blue-800".to_string();
             });
