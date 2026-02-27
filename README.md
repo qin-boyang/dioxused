@@ -53,3 +53,43 @@ To create bundle for release, use the `--release` flag.
 dx bundle --platform web --release
 ```
 Bundle for web can be found in `target/dx/dioxused/releae/web/public/`
+
+### Emoji 
+Trading/Financial:
+💰 Money bag
+💵 Dollar
+💶 Euro
+💷 Pound
+💴 Yen
+📈 Chart increasing
+📉 Chart decreasing
+💹 Chart with upward trend
+🏦 Bank
+💳 Credit card
+🧾 Receipt
+📊 Bar chart
+⚖️ Balance scale
+🎯 Target
+📌 Pin
+💎 Gem/Diamond
+🪙 Coin
+💱 Currency exchange
+💲 Heavy dollar sign
+
+Status/Results:
+✅ Check mark
+❌ Cross mark
+⚠️ Warning
+ℹ️ Information
+🔄 Refresh/Loading
+🔁 Repeat
+▶️ Start
+⏸️ Pause
+⏹️ Stop
+⏭️ Next
+⏮️ Previous
+✨ Sparkles (success)
+🎉 Party popper (success)
+💥 Collision (error)
+🔔 Bell (notification)
+🔕 Bell with slash (muted)
